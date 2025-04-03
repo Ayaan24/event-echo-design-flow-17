@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, ChevronUp } from 'lucide-react';
-
 const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -9,14 +7,12 @@ const Footer: React.FC = () => {
       behavior: 'smooth'
     });
   };
-
-  return (
-    <footer className="bg-studio-black">
+  return <footer className="bg-studio-black">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="space-y-4">
             <a href="/" className="flex items-center text-3xl font-bold text-white">
-              <span className="mr-1">1M</span>
+              <span className="mr-1">DMK</span>
               <span className="text-2xl">STUDIO</span>
             </a>
             <p className="text-gray-400">
@@ -64,11 +60,7 @@ const Footer: React.FC = () => {
             <h3 className="mb-4 text-lg font-semibold">Newsletter</h3>
             <p className="mb-4 text-gray-400">Subscribe to get updates on new events and special offers.</p>
             <div className="flex">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="w-full rounded-l-md border-none bg-studio-darkgray px-4 py-2 focus:outline-none"
-              />
+              <input type="email" placeholder="Your email" className="w-full rounded-l-md border-none bg-studio-darkgray px-4 py-2 focus:outline-none" />
               <button className="rounded-r-md bg-studio-red px-4 py-2 font-medium text-white hover:bg-opacity-90">
                 Subscribe
               </button>
@@ -88,14 +80,9 @@ const Footer: React.FC = () => {
         </div>
       </div>
       
-      <button 
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 flex h-10 w-10 items-center justify-center rounded-full bg-studio-red text-white shadow-lg transition-all hover:bg-opacity-90"
-      >
+      <button onClick={scrollToTop} className="fixed bottom-8 right-8 flex h-10 w-10 items-center justify-center rounded-full bg-studio-red text-white shadow-lg transition-all hover:bg-opacity-90">
         <ChevronUp className="h-6 w-6" />
       </button>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
