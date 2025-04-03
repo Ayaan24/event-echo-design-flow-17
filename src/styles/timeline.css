@@ -1,0 +1,21 @@
+
+.timeline-item {
+  transform: translateY(30px);
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+
+.timeline-item-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes border-pulse {
+  0% { border-color: rgba(234, 56, 76, 0.5); }
+  50% { border-color: rgba(234, 56, 76, 1); }
+  100% { border-color: rgba(234, 56, 76, 0.5); }
+}
+
+.active-timeline-item {
+  animation: border-pulse 2s infinite;
+}
