@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,13 +61,6 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				studio: {
-					red: '#ff3b30',
-					black: '#121212',
-					darkgray: '#1a1a1a',
-					gray: '#2c2c2c',
-					white: '#ffffff',
 				}
 			},
 			borderRadius: {
@@ -78,53 +70,25 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: '0', opacity: '0' },
-					to: { height: 'var(--radix-accordion-content-height)', opacity: '1' }
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
 				},
 				'accordion-up': {
-					from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
-					to: { height: '0', opacity: '0' }
-				},
-				'fade-in': {
-					"0%": {
-						opacity: "0",
-						transform: "translateY(10px)"
+					from: {
+						height: 'var(--radix-accordion-content-height)'
 					},
-					"100%": {
-						opacity: "1",
-						transform: "translateY(0)"
+					to: {
+						height: '0'
 					}
-				},
-				'scale-in': {
-					"0%": {
-						transform: "scale(0.95)",
-						opacity: "0"
-					},
-					"100%": {
-						transform: "scale(1)",
-						opacity: "1"
-					}
-				},
-				'pulse-light': {
-					'0%, 100%': {
-						opacity: '1',
-					},
-					'50%': {
-						opacity: '0.8',
-					},
-				},
-				'marquee': {
-					'0%': { transform: 'translateX(0%)' },
-					'100%': { transform: 'translateX(-100%)' },
-				},
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out',
-				'scale-in': 'scale-in 0.2s ease-out',
-				'pulse-light': 'pulse-light 2s ease-in-out infinite',
-				'marquee': 'marquee 25s linear infinite',
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
