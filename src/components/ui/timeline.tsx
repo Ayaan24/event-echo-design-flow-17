@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full px-4 py-12 relative">
+    <div ref={containerRef} className="w-full px-4 py-12 relative max-w-full overflow-hidden">
       {/* Timeline line */}
       <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2" />
       
@@ -49,7 +49,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <div 
           key={index}
           className={cn(
-            "timeline-item relative flex flex-col md:flex-row md:even:flex-row-reverse mb-12 opacity-70 transition-all duration-500",
+            "timeline-item relative flex flex-col md:flex-row md:even:flex-row-reverse mb-12 opacity-70 transition-all duration-500 max-w-full",
             activeIndex === index && "active-timeline-item opacity-100"
           )}
         >
@@ -63,12 +63,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           
           {/* Content */}
           <div className={cn(
-            "ml-10 md:ml-0 md:w-5/12 p-5 bg-white rounded-lg shadow-md transition-all duration-500 border-l-4 border-transparent",
+            "ml-10 md:ml-0 md:w-5/12 p-5 bg-white rounded-lg shadow-md transition-all duration-500 border-l-4 border-transparent max-w-full overflow-hidden",
             activeIndex === index && "border-l-[#ea384c]"
           )}>
             <h3 className="text-xl font-bold mb-1">{item.title}</h3>
             <p className="text-sm text-gray-500 mb-3">{item.date}</p>
-            <div className="text-base overflow-x-hidden">
+            <div className="text-base overflow-hidden">
               {isMobile ? (
                 <div className="w-full max-w-[calc(100vw-80px)]">{item.content}</div>
               ) : (
