@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 interface Event {
   id: number;
@@ -22,29 +22,10 @@ interface Event {
 
 const cities = [
   "All Cities",
-  "Mumbai",
-  "Pune",
-  "Nagpur",
-  "Vadodra",
-  "Surat",
-  "Ahembdabad",
-  "Hyderabad",
-  "Kochi",
-  "Chennai",
-  "Bangalore",
-  "Gurgaon",
-  "North Delhi",
-  "South Delhi",
-  "IBIZA",
-  "Chandigarh",
-  "Ludhiana",
-  "Kolkata",
-  "Siliguri",
-  "Guwahti",
-  "Dehradun",
-  "Jaipur",
-  "Indore",
-  "Bhopal"
+  "Mumbai", "Pune", "Nagpur", "Vadodra", "Surat", "Ahembdabad", 
+  "Hyderabad", "Kochi", "Chennai", "Bangalore", "Gurgaon", 
+  "Delhi", "North Delhi", "South Delhi", "IBIZA", "Chandigarh", "Ludhiana", "Kolkata", 
+  "Siliguri", "Guwahti", "Dehradun", "Jaipur", "Indore", "Bhopal"
 ];
 
 const eventsData: Event[] = [
@@ -168,7 +149,10 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
 const EventsListPage: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>("All Cities");
   const [filteredEvents, setFilteredEvents] = useState<Record<string, Event[]>>({});
+  const [expandedMonths, setExpandedMonths] = useState<Record<string, boolean>>({});
   const { toast } = useToast();
+  
+  const ITEMS_TO_SHOW = 3;
 
   useEffect(() => {
     // Filter events based on selected city
@@ -179,6 +163,9 @@ const EventsListPage: React.FC = () => {
     // Group filtered events by month
     const grouped = groupEventsByMonth(filtered);
     setFilteredEvents(grouped);
+    
+    // Reset expanded state when filter changes
+    setExpandedMonths({});
     
     // Show toast notification when filter changes
     if (selectedCity !== "All Cities") {
@@ -196,11 +183,29 @@ const EventsListPage: React.FC = () => {
     0
   );
 
+  const toggleMonthExpansion = (month: string) => {
+    setExpandedMonths(prev => ({
+      ...prev,
+      [month]: !prev[month]
+    }));
+  };
+
+  // Function to determine how many events to show for a month
+  const getVisibleEvents = (month: string, events: Event[]) => {
+    // When filtering by city, show all events
+    if (selectedCity !== "All Cities") {
+      return events;
+    }
+    
+    // If month is expanded, show all events, otherwise show only ITEMS_TO_SHOW
+    return expandedMonths[month] ? events : events.slice(0, ITEMS_TO_SHOW);
+  };
+
   return (
-    <section className="py-16">
+    <section className="py-16 max-w-[100vw] overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-8 flex flex-col items-start justify-between space-y-4 md:flex-row md:items-center md:space-y-0">
-          <h2 className="text-4xl font-bold md:text-5xl">UPCOMING EVENTS</h2>
+          <h2 className="text-3xl md:text-4xl font-bold max-w-full overflow-hidden text-ellipsis">UPCOMING EVENTS</h2>
           
           <div className="flex w-full items-center space-x-4 md:w-auto">
             <div className="w-full md:w-64">
@@ -230,12 +235,32 @@ const EventsListPage: React.FC = () => {
         {Object.keys(filteredEvents).length > 0 ? (
           Object.entries(filteredEvents).map(([month, events]) => (
             <div key={month} className="mb-16 animate-fade-in">
-              <h3 className="mb-8 text-3xl font-bold">{month}</h3>
+              <h3 className="mb-8 text-2xl md:text-3xl font-bold">{month}</h3>
               <div className="space-y-4">
-                {events.map((event) => (
+                {getVisibleEvents(month, events).map((event) => (
                   <EventCard key={event.id} event={event} />
                 ))}
               </div>
+              
+              {/* Only show "See More" button if there are more than ITEMS_TO_SHOW events and not filtering by city */}
+              {selectedCity === "All Cities" && events.length > ITEMS_TO_SHOW && (
+                <button 
+                  onClick={() => toggleMonthExpansion(month)}
+                  className="mt-6 flex items-center gap-2 rounded-lg px-4 py-2 text-studio-red hover:text-white hover:bg-studio-red transition-colors"
+                >
+                  {expandedMonths[month] ? (
+                    <>
+                      <span>See Less</span>
+                      <ChevronUp className="h-4 w-4" />
+                    </>
+                  ) : (
+                    <>
+                      <span>See All ({events.length})</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </>
+                  )}
+                </button>
+              )}
             </div>
           ))
         ) : (
