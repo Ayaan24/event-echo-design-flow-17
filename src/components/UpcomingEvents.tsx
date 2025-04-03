@@ -20,160 +20,650 @@ interface Event {
 const cityList = [
   "Mumbai", "Pune", "Nagpur", "Vadora", "Surat", "Ahmebdabad", 
   "Hyderabad", "Kochi", "Chennai", "Bangalore", "Gurgaon", 
-  "Delhi", "Ibiza", "Chandigarh", "Ludhiana", "Kolkata", 
-  "Siliguri", "Guwahti", "Jaipur", "Indore", "Bhopal"
+  "Delhi", "North Delhi", "South Delhi", "IBIZA", "Chandigarh", "Ludhiana", "Kolkata", 
+  "Siliguri", "Guwahti", "Dehradun", "Jaipur", "Indore", "Bhopal"
 ];
 
 const eventData: Record<string, Event[]> = {
-  "June 2024": [
+  "May 2025": [
     {
       id: 1,
-      day: "07",
-      month: "June",
-      dayOfWeek: "Friday",
-      title: "Shongololo Shuffle: Desert Edition",
-      artists: "Dewald Wasserfall, Ampie, Early B, Eloff",
-      venue: "Millennium Al Rawdah Hotel",
-      location: "Abu Dhabi",
-      image: "/lovable-uploads/83f8afa7-2d88-4b23-9716-bcc2a4c896cf.png",
-      city: "Mumbai"
+      day: "08",
+      month: "May",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
     },
     {
       id: 2,
-      day: "10",
-      month: "June",
-      dayOfWeek: "Monday",
-      title: "Amr Diab",
-      artists: "Amr Diab",
-      venue: "Coca-Cola Arena",
-      location: "Dubai",
-      image: "/lovable-uploads/81181622-1c8c-43b6-80b1-5d4eb2714e00.png",
-      city: "Delhi"
+      day: "09",
+      month: "May",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
     },
     {
       id: 3,
-      day: "15",
-      month: "June",
+      day: "10",
+      month: "May",
       dayOfWeek: "Saturday",
-      title: "The Ocean",
-      artists: "The Ocean",
-      venue: "P7 Arena Media One Hotel",
-      location: "Dubai",
-      image: "/lovable-uploads/a6873780-02ac-48f2-bb6a-c45e76f36b24.png",
-      city: "Bangalore"
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "EIGHT",
+      location: "Mumbai",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Mumbai"
     },
-    {
-      id: 8,
-      day: "22",
-      month: "June",
-      dayOfWeek: "Saturday",
-      title: "Jazz Night: Blue Notes",
-      artists: "Miles Thompson Quartet",
-      venue: "Royal Auditorium",
-      location: "Chennai",
-      image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1074&auto=format&fit=crop",
-      city: "Chennai"
-    },
-    {
-      id: 9,
-      day: "29",
-      month: "June",
-      dayOfWeek: "Saturday",
-      title: "Techno Pulse",
-      artists: "DJ Matrix, Electra Volt",
-      venue: "Pulse Nightclub",
-      location: "Goa",
-      image: "https://images.unsplash.com/photo-1571751239008-50cad6cb9265?q=80&w=1170&auto=format&fit=crop",
-      city: "Goa"
-    },
-  ],
-  "July 2024": [
     {
       id: 4,
-      day: "05",
-      month: "July",
-      dayOfWeek: "Friday",
-      title: "Cigarettes After Sex",
-      artists: "Cigarettes After Sex",
-      venue: "Audi 2",
-      location: "New Delhi",
-      image: "/lovable-uploads/3b939220-2116-4789-b6d7-f5e4ff4f5a8b.png",
-      city: "Delhi"
+      day: "11",
+      month: "May",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "EIGHT",
+      location: "Mumbai",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Mumbai"
     },
     {
       id: 5,
-      day: "14",
-      month: "July",
-      dayOfWeek: "Sunday",
-      title: "Matt Rife: ProbleMATTic World Tour",
-      artists: "Matt Rife",
-      venue: "Millennium Al Rawdah Hotel",
-      location: "Abu Dhabi",
-      image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-4.0.3&w=1170&q=80",
-      city: "Mumbai"
-    },
-    {
-      id: 10,
-      day: "20",
-      month: "July",
-      dayOfWeek: "Saturday",
-      title: "Folk Fusion Festival",
+      day: "12",
+      month: "May",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
       artists: "Various Artists",
-      venue: "Heritage Park",
-      location: "Jaipur",
-      image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1032&auto=format&fit=crop",
-      city: "Jaipur"
-    },
-    {
-      id: 11,
-      day: "27",
-      month: "July",
-      dayOfWeek: "Saturday",
-      title: "Rock Revolution",
-      artists: "Thunderstrike, Metal Mavericks",
-      venue: "Arena Stadium",
-      location: "Kolkata",
+      venue: "TVDC",
+      location: "Pune",
       image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
-      city: "Kolkata"
-    }
-  ],
-  "August 2024": [
+      city: "Pune"
+    },
     {
       id: 6,
-      day: "03",
-      month: "August",
-      dayOfWeek: "Saturday",
-      title: "Summer Beats Festival",
-      artists: "David Guetta, Martin Garrix, Alesso",
-      venue: "Sunburn Arena",
-      location: "Hyderabad",
-      image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1170&auto=format&fit=crop",
-      city: "Hyderabad"
+      day: "13",
+      month: "May",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "TVDC",
+      location: "Pune",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Pune"
     },
     {
       id: 7,
+      day: "14",
+      month: "May",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "PRATEEK",
+      location: "Nagpur",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Nagpur"
+    },
+    {
+      id: 8,
+      day: "15",
+      month: "May",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "MOVES",
+      location: "Vadora",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Vadora"
+    },
+    {
+      id: 9,
+      day: "16",
+      month: "May",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "HAPPENING SPACE SURAT",
+      location: "Surat",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Surat"
+    },
+    {
+      id: 10,
       day: "17",
-      month: "August",
+      month: "May",
       dayOfWeek: "Saturday",
-      title: "Classical Symphony",
-      artists: "Mumbai Philharmonic Orchestra",
-      venue: "National Centre for Performing Arts",
-      location: "Mumbai",
-      image: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1170&auto=format&fit=crop",
-      city: "Mumbai"
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "RUH",
+      location: "Ahmebdabad",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Ahmebdabad"
+    },
+    {
+      id: 11,
+      day: "18",
+      month: "May",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "RUH",
+      location: "Ahmebdabad",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Ahmebdabad"
     },
     {
       id: 12,
+      day: "19",
+      month: "May",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 13,
+      day: "20",
+      month: "May",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 14,
+      day: "21",
+      month: "May",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 15,
+      day: "22",
+      month: "May",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "NICY JOSEPH",
+      location: "Hyderabad",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Hyderabad"
+    },
+    {
+      id: 16,
+      day: "23",
+      month: "May",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "THE DANCE BLOCK",
+      location: "Kochi",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Kochi"
+    },
+    {
+      id: 17,
       day: "24",
-      month: "August",
+      month: "May",
       dayOfWeek: "Saturday",
-      title: "Hip Hop Showcase",
-      artists: "Urban Beats Crew",
-      venue: "Street Culture Hub",
-      location: "Pune",
-      image: "https://images.unsplash.com/photo-1571151489226-c23eae565ab6?q=80&w=1074&auto=format&fit=crop",
-      city: "Pune"
-    }
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "TATTVA",
+      location: "Chennai",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Chennai"
+    },
+    {
+      id: 18,
+      day: "25",
+      month: "May",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "VINS",
+      location: "Bangalore",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Bangalore"
+    },
+    {
+      id: 19,
+      day: "26",
+      month: "May",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "VINS",
+      location: "Bangalore",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Bangalore"
+    },
+    {
+      id: 20,
+      day: "27",
+      month: "May",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "Bangalore T",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Bangalore"
+    },
+    {
+      id: 21,
+      day: "28",
+      month: "May",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 22,
+      day: "29",
+      month: "May",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 23,
+      day: "30",
+      month: "May",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "QALA",
+      location: "Gurgaon",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Gurgaon"
+    },
+    {
+      id: 24,
+      day: "31",
+      month: "May",
+      dayOfWeek: "Saturday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "MALANG",
+      location: "North Delhi",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "North Delhi"
+    },
+  ],
+  "June 2025": [
+    {
+      id: 25,
+      day: "01",
+      month: "June",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "IFBC",
+      location: "South Delhi",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "South Delhi"
+    },
+    {
+      id: 26,
+      day: "02",
+      month: "June",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "YSDC",
+      location: "South Delhi",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "South Delhi"
+    },
+    {
+      id: 27,
+      day: "03",
+      month: "June",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "10 FT",
+      location: "South Delhi T",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "South Delhi"
+    },
+    {
+      id: 28,
+      day: "04",
+      month: "June",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 29,
+      day: "05",
+      month: "June",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "IBIZA",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "IBIZA"
+    },
+    {
+      id: 30,
+      day: "06",
+      month: "June",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "IBIZA",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "IBIZA"
+    },
+    {
+      id: 31,
+      day: "07",
+      month: "June",
+      dayOfWeek: "Saturday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "",
+      location: "IBIZA",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "IBIZA"
+    },
+    {
+      id: 32,
+      day: "08",
+      month: "June",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "",
+      location: "IBIZA",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "IBIZA"
+    },
+    {
+      id: 33,
+      day: "09",
+      month: "June",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "IBIZA",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "IBIZA"
+    },
+    {
+      id: 34,
+      day: "10",
+      month: "June",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 35,
+      day: "11",
+      month: "June",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 36,
+      day: "12",
+      month: "June",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "BODY ZONE",
+      location: "Chandigarh",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Chandigarh"
+    },
+    {
+      id: 37,
+      day: "13",
+      month: "June",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "Ludhiana",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Ludhiana"
+    },
+    {
+      id: 38,
+      day: "14",
+      month: "June",
+      dayOfWeek: "Saturday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "DANCE DIFFERENT",
+      location: "Kolkata",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Kolkata"
+    },
+    {
+      id: 39,
+      day: "15",
+      month: "June",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "DANCE DIFFERENT",
+      location: "Kolkata",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Kolkata"
+    },
+    {
+      id: 40,
+      day: "16",
+      month: "June",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "Siliguri",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Siliguri"
+    },
+    {
+      id: 41,
+      day: "17",
+      month: "June",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "STUDIO 7 GWH",
+      location: "Guwahti",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Guwahti"
+    },
+    {
+      id: 42,
+      day: "18",
+      month: "June",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "HARSHIT",
+      location: "Dehradun",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Dehradun"
+    },
+    {
+      id: 43,
+      day: "19",
+      month: "June",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "IDF JAIPUR",
+      location: "Jaipur",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Jaipur"
+    },
+    {
+      id: 44,
+      day: "20",
+      month: "June",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "IDF JAIPUR",
+      location: "Jaipur",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Jaipur"
+    },
+    {
+      id: 45,
+      day: "21",
+      month: "June",
+      dayOfWeek: "Saturday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "FLY FEET STUDIO",
+      location: "Indore",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Indore"
+    },
+    {
+      id: 46,
+      day: "22",
+      month: "June",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "FEEL THE VIBE STUDIO",
+      location: "Bhopal",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Bhopal"
+    },
+    {
+      id: 47,
+      day: "23",
+      month: "June",
+      dayOfWeek: "Monday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 48,
+      day: "24",
+      month: "June",
+      dayOfWeek: "Tuesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 49,
+      day: "25",
+      month: "June",
+      dayOfWeek: "Wednesday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 50,
+      day: "26",
+      month: "June",
+      dayOfWeek: "Thursday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 51,
+      day: "27",
+      month: "June",
+      dayOfWeek: "Friday",
+      title: "Workshop Session",
+      artists: "Various Artists",
+      venue: "",
+      location: "",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: ""
+    },
+    {
+      id: 52,
+      day: "28",
+      month: "June",
+      dayOfWeek: "Saturday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "EIGHT",
+      location: "Mumbai",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Mumbai"
+    },
+    {
+      id: 53,
+      day: "29",
+      month: "June",
+      dayOfWeek: "Sunday",
+      title: "Weekend Workshop",
+      artists: "Various Artists",
+      venue: "EIGHT",
+      location: "Mumbai",
+      image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop",
+      city: "Mumbai"
+    },
   ]
 };
 
@@ -292,11 +782,13 @@ const UpcomingEvents: React.FC = () => {
               <h3 className="mb-8 text-3xl font-bold">{month}</h3>
               <div className="space-y-6">
                 {events.map((event) => (
-                  <EventCard 
-                    key={event.id} 
-                    {...event} 
-                    isWeekend={isWeekend(event.dayOfWeek)} 
-                  />
+                  event.city && (
+                    <EventCard 
+                      key={event.id} 
+                      {...event} 
+                      isWeekend={isWeekend(event.dayOfWeek)} 
+                    />
+                  )
                 ))}
               </div>
             </div>
