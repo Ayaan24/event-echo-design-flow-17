@@ -11,14 +11,23 @@ export const NavbarHighlight = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="text-2xl font-bold">DMK STUDIO</div>
         <div className="hidden md:flex space-x-8">
-          <ActiveLink href="/about">ABOUT STUDIO</ActiveLink>
-          <ActiveLink href="/schedule">CLASS SCHEDULE</ActiveLink>
+          <ActiveLink href="/" className={location.pathname === "/" ? "bg-[#ea384c] px-4 py-2 rounded-full" : ""}>
+            HOME
+          </ActiveLink>
+          <ActiveLink href="/about" className={location.pathname === "/about" ? "bg-[#ea384c] px-4 py-2 rounded-full" : ""}>
+            ABOUT STUDIO
+          </ActiveLink>
+          <ActiveLink href="/schedule" className={location.pathname === "/schedule" ? "bg-[#ea384c] px-4 py-2 rounded-full" : ""}>
+            CLASS SCHEDULE
+          </ActiveLink>
           <ActiveLink 
             href="/classes" 
             className={location.pathname === "/classes" ? "bg-[#ea384c] px-4 py-2 rounded-full" : ""}>
             TYPES OF CLASSES
           </ActiveLink>
-          <ActiveLink href="/buy">BUY CLASS TICKET</ActiveLink>
+          <ActiveLink href="/buy" className={location.pathname === "/buy" ? "bg-[#ea384c] px-4 py-2 rounded-full" : ""}>
+            BUY CLASS TICKET
+          </ActiveLink>
         </div>
         <div className="md:hidden">
           <button className="text-white">

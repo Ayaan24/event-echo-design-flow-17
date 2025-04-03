@@ -19,3 +19,29 @@
 .active-timeline-item {
   animation: border-pulse 2s infinite;
 }
+
+/* Enhance timeline animation */
+.timeline-connector {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #e2e2e2, transparent);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ea384c;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.active-dot {
+  background-color: #ea384c;
+  box-shadow: 0 0 0 4px rgba(234, 56, 76, 0.3);
+}
