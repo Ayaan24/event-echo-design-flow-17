@@ -2,6 +2,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface TimelineEntry {
   title: string;
@@ -12,6 +13,7 @@ interface TimelineEntry {
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full py-12 relative">
+    <div ref={containerRef} className="w-full px-4 py-12 relative">
       {/* Timeline line */}
       <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2" />
       
@@ -48,7 +50,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           key={index}
           className={cn(
             "timeline-item relative flex flex-col md:flex-row md:even:flex-row-reverse mb-12 opacity-70 transition-all duration-500",
-            activeIndex === index && "opacity-100"
+            activeIndex === index && "active-timeline-item opacity-100"
           )}
         >
           {/* Timeline connector */}
@@ -66,7 +68,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           )}>
             <h3 className="text-xl font-bold mb-1">{item.title}</h3>
             <p className="text-sm text-gray-500 mb-3">{item.date}</p>
-            <div>{item.content}</div>
+            <div className="text-base overflow-x-hidden">
+              {isMobile ? (
+                <div className="w-full max-w-[calc(100vw-80px)]">{item.content}</div>
+              ) : (
+                item.content
+              )}
+            </div>
           </div>
         </div>
       ))}
