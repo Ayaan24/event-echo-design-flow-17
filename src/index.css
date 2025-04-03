@@ -7,63 +7,50 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 100%;
-
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 0 89% 59%;
-    --accent-foreground: 0 0% 100%;
-
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+    --studio-black: #121212;
+    --studio-darkgray: #1e1e1e;
+    --studio-gray: #2e2e2e;
+    --studio-red: #ff4d4d;
   }
 
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 89% 59%;
-    --accent-foreground: 0 0% 100%;
-
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 80%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -71,28 +58,61 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-studio-black text-white font-sans antialiased;
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-medium text-gray-300 transition-colors duration-200 hover:text-white;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .ticket-button {
-    @apply relative inline-flex items-center justify-center rounded-full border border-studio-red bg-transparent text-studio-red transition-all hover:bg-studio-red hover:text-white;
+    @apply flex items-center justify-center rounded-full bg-studio-red text-white transition-all hover:bg-opacity-90;
   }
 
-  .ticket-button-filled {
-    @apply relative inline-flex items-center justify-center rounded-full bg-studio-red text-white transition-all hover:bg-opacity-90;
+  .weekend-event {
+    @apply relative border-l-4 border-studio-red pl-4;
   }
+}
 
-  .event-card {
-    @apply relative overflow-hidden rounded-lg bg-studio-darkgray p-4 transition-all duration-300 hover:bg-studio-gray;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .nav-link {
-    @apply relative text-white transition-all duration-300 hover:text-studio-red after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-studio-red after:transition-all after:duration-300 hover:after:w-full;
+@keyframes pulse-light {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7);
   }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 77, 77, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
+  }
+}
 
-  .red-button {
-    @apply rounded-full bg-studio-red px-8 py-3 font-semibold text-white transition-all hover:bg-opacity-90;
-  }
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-pulse-light {
+  animation: pulse-light 1.5s infinite;
 }

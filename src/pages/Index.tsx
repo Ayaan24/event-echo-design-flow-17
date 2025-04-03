@@ -2,10 +2,8 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import ScheduleHeader from '../components/ScheduleHeader';
-import ScheduleFilters from '../components/ScheduleFilters';
-import UpcomingEvents from '../components/UpcomingEvents';
+import EventsListPage from '../components/EventsListPage';
 import GrabTickets from '../components/GrabTickets';
-import PastShows from '../components/PastShows';
 import Footer from '../components/Footer';
 
 const Index: React.FC = () => {
@@ -32,16 +30,12 @@ const Index: React.FC = () => {
       <Navbar />
       
       <ScheduleHeader />
-      <ScheduleFilters />
-      
-      <UpcomingEvents />
-      
-      <div data-animate>
-        <GrabTickets />
+      <div id="upcoming">
+        <EventsListPage />
       </div>
       
-      <div data-animate>
-        <PastShows />
+      <div data-animate id="tickets">
+        <GrabTickets />
       </div>
       
       <Footer />
