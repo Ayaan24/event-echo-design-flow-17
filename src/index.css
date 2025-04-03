@@ -59,7 +59,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Montserrat',_sans-serif];
   }
 }
 
@@ -83,6 +83,12 @@
 
   .weekend-event {
     @apply relative border-l-4 border-studio-red pl-4;
+  }
+  
+  .marquee-container {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
   }
 }
 
